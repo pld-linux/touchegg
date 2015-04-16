@@ -12,6 +12,9 @@ BuildRequires:	QtCore-devel
 BuildRequires:	QtGui-devel
 BuildRequires:	QtXml-devel
 BuildRequires:	qt4-qmake
+BuildRequires:	xorg-lib-libXtst-devel
+# fatal error: geis/geis.h: No such file or directory
+BuildRequires:	geis-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
