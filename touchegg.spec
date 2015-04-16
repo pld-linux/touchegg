@@ -1,4 +1,5 @@
-Summary:	Touchégg - Multitouch gesture recognizer
+Summary:	Touchegg - Multitouch gesture recognizer
+Summary(en.UTF-8):	Touchégg - Multitouch gesture recognizer
 Name:		touchegg
 Version:	1.1.1
 Release:	0.1
@@ -9,24 +10,25 @@ Source0:	https://touchegg.googlecode.com/files/%{name}-%{version}.tar.gz
 URL:		http://code.google.com/p/touchegg/
 BuildRequires:	QtCore-devel
 BuildRequires:	QtGui-devel
-BuildRequires:	QtXML-devel
+BuildRequires:	QtXml-devel
 BuildRequires:	qt4-qmake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
+Touchegg - Multitouch gesture recognizer.
+
+%description -l en.UTF-8
 Touchégg - Multitouch gesture recognizer.
 
 %prep
 %setup -q
 
 %build
-qt4-qmake
+qmake-qt4
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-#install -d $RPM_BUILD_ROOT
-
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
@@ -36,5 +38,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS CREDITS CHANGES ChangeLog NEWS README THANKS TODO
-%attr(755,root,root) %{_bindir}/%{name}*
 %config(noreplace) %verify(not md5 mtime size) /etc/sysconfig/%{name}
+%attr(755,root,root) %{_bindir}/%{name}*
