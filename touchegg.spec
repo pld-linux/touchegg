@@ -2,7 +2,7 @@ Summary:	Touchegg - Multitouch gesture recognizer
 Summary(en.UTF-8):	Touchégg - Multitouch gesture recognizer
 Name:		touchegg
 Version:	1.1.1
-Release:	0.1
+Release:	1
 License:	GPL v3
 Group:		Applications
 Source0:	https://touchegg.googlecode.com/files/%{name}-%{version}.tar.gz
@@ -11,10 +11,10 @@ URL:		http://code.google.com/p/touchegg/
 BuildRequires:	QtCore-devel
 BuildRequires:	QtGui-devel
 BuildRequires:	QtXml-devel
+BuildRequires:	geis-devel
+BuildRequires:	qt4-build
 BuildRequires:	qt4-qmake
 BuildRequires:	xorg-lib-libXtst-devel
-# fatal error: geis/geis.h: No such file or directory
-BuildRequires:	geis-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -33,13 +33,13 @@ qmake-qt4
 %install
 rm -rf $RPM_BUILD_ROOT
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+	INSTALL_ROOT=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS CREDITS CHANGES ChangeLog NEWS README THANKS TODO
-%config(noreplace) %verify(not md5 mtime size) /etc/sysconfig/%{name}
-%attr(755,root,root) %{_bindir}/%{name}*
+%doc CHANGELOG README
+%attr(755,root,root) %{_bindir}/touchegg
+%{_datadir}/touchegg/touchegg.conf
