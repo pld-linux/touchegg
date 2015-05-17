@@ -2,7 +2,7 @@ Summary:	Touchegg - Multitouch gesture recognizer
 Summary(en.UTF-8):	Touchégg - Multitouch gesture recognizer
 Name:		touchegg
 Version:	1.1.1
-Release:	1
+Release:	2
 License:	GPL v3
 Group:		Applications
 Source0:	https://touchegg.googlecode.com/files/%{name}-%{version}.tar.gz
@@ -42,4 +42,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc CHANGELOG README
 %attr(755,root,root) %{_bindir}/touchegg
+%dir %{_datadir}/touchegg
 %{_datadir}/touchegg/touchegg.conf
